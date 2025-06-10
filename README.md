@@ -38,7 +38,7 @@ The hardest part of this assignment was figuring out design and working with CSS
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2025] [Syeda Rahman]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
