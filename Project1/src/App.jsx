@@ -52,7 +52,7 @@ const App = () => {
           title="Soujourner Truth"
           description={
             <>
-              An African-American abolitionist, known for her powerful speeches, most famously <i>Ain't I A Woman?</i>. During the Civil War Truth helped recruit black troops for the Union Army; she continued to fight on behalf of women and African Americans until her death.
+              An African-American abolitionist, known for her powerful speeches, most famously "Ain't I A Woman?". During the Civil War Truth helped recruit black troops for the Union Army; she continued to fight on behalf of women and African Americans until her death.
             </>
           }
           image="/images/SojournerTruth.jpg"
