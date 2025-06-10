@@ -27,11 +27,8 @@ The following **optional** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
-
-![](https://media3.giphy.com/media/aUovxH8Vf9qDu/giphy.gif](https://imgur.com/a/jNpl6tP](https://i.imgur.com/Yd2zf7l.mp4)
-
- GIF Link: https://imgur.com/a/jNpl6tP
+# Here's a walkthrough of implemented required features:
+GIF Link: https://imgur.com/a/jNpl6tP
 
 GIF created with ScreenToGif!
 
