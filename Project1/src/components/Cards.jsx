@@ -1,12 +1,14 @@
 import React from "react";
 
 const Cards = (props) => {
+    const { image, title, description, link } = props;
     return (
-        <a href={props.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>
+        <a href={link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>
             <div className="cards">
-                <h2>{props.title}</h2>
-                <img src={props.image} alt={props.title} style={{ width: "90%" }} />
-                <p>{props.description}</p>
+                <img src={image} alt={title} className="card-image" />
+                <h3 className="card-title">{title}</h3>
+                <div className="card-description">{description}</div>
+                {/* ...other content... */}
             </div>
         </a>
     );

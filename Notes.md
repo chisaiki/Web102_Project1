@@ -1,10 +1,11 @@
-Use node v22.14.0 to prevent OS/Hardware Compatibilty issues
+# Notes:
+- Use node v22.14.0 to prevent OS/Hardware Compatibilty issues
 
-The rel="noopener noreferrer" attribute on the <a> tag is for security and privacy 
-when opening links in a new tab (with target="_blank"):
-It helps keep your site secure and private when users click links that open in a new tab.
+- Whenever I want to change the style of a specific element in a component, I should make a new CSS class for it.
 
-add fixed size for cards. largest amount of text.
+- The rel="noopener noreferrer" attribute on the <a> tag is for security and privacy 
+    when opening links in a new tab (with target="_blank"):
+    It helps keep your site secure and private when users click links that open in a new tab.
 
 # Errors:
 
