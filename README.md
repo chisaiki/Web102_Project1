@@ -27,7 +27,7 @@ The following **optional** features are implemented:
 
 ## Video Walkthrough
 
-# Here's a walkthrough of implemented required features:
+### Here's a walkthrough of implemented required features:
 GIF Link: https://imgur.com/a/jNpl6tP
 
 GIF created with ScreenToGif!
