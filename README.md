@@ -29,6 +29,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
+![Website]([https://media3.giphy.com/media/aUovxH8Vf9qDu/giphy.gif](https://imgur.com/a/jNpl6tP))
  GIF Link: https://imgur.com/a/jNpl6tP
 
 GIF created with ScreenToGif!
