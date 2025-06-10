@@ -7,6 +7,8 @@
     when opening links in a new tab (with target="_blank"):
     It helps keep your site secure and private when users click links that open in a new tab.
 
+- To show your web app in a mobile format, you need to make your layout **responsive** using CSS media queries.
+
 # Errors:
 
 ``` 'vite' is not recognized as an internal or external command, operable program or batch file. ```

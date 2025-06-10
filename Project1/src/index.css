@@ -44,3 +44,21 @@
     padding-right: 16px;
 }
 
+/*Customized for mobile view of a website*/
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr !important; /* 1 card per row */
+    max-width: 100vw;
+    padding: 0 8px;
+  }
+  .cards {
+    width: 90%;
+    min-width: 0;
+    height: auto;
+    margin: 8px auto;   /* Center the card horizontally */
+  }
+  .card-image {
+    height: 70%; 
+  }
+}
+
