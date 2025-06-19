@@ -52,7 +52,7 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+It was hard to figure out how to flip through the cards and mod back to the start and then keeping track of it. Implementing the different modes was also beyond the scope of the project but I wanted to because it looked neat. I had to use AI assist and ask a lot of question on implementation.
 
 ## License
 
