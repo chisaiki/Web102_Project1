@@ -75,7 +75,7 @@ const App = () => {
     },
   ];
 
-  /*I asked AI for help figuring out how to go through the cards*/
+  /*go through the all cards*/
   const nextCard = () => {
     setCurrentCardIndex((prev) => (prev + 1) % cardData.length);
   };
