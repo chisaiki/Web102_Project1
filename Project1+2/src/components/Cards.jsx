@@ -6,8 +6,8 @@ const Cards = ({ title, description, image, link, isStudyMode }) => {
       <div className="flip-card">
         <div className="flip-card-inner">
           <div className="flip-card-front">
-            <img src={image} alt={title} style={{width: '80%', height: '60%', objectFit: 'cover', borderRadius: '7px'}} />
-            <h3>{title}</h3>
+            <img src={image} alt={title} style={{width: '90%', height: '75%', objectFit: 'cover', borderRadius: '7px'}} />
+            <h3 style={{fontSize: '1.5em'}}>Who is this?</h3>
           </div>
           <div className="flip-card-back">
             <h3>{title}</h3>
