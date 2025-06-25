@@ -5,10 +5,15 @@ import Cards from './components/Cards.jsx';
 const App = () => {
   const [isStudyMode, setIsStudyMode] = useState(false);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [userAnswer, setUserAnswer] = useState('');
+  const [showResult, setShowResult] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(false);
 
   const handleButtonClick = () => {
     setIsStudyMode(!isStudyMode);
     setCurrentCardIndex(0); /*Reset to first card when switching modes*/
+    setUserAnswer(''); /*Reset user answer*/
+    setShowResult(false); /*Reset result display*/
   };
 
   /*Array of all card data*/
@@ -77,11 +82,34 @@ const App = () => {
 
   /*go through the all cards*/
   const nextCard = () => {
-    setCurrentCardIndex((prev) => (prev + 1) % cardData.length);
+    if (currentCardIndex < cardData.length - 1) {
+      setCurrentCardIndex((prev) => prev + 1);
+      setUserAnswer(''); /*Reset answer when moving to next card*/
+      setShowResult(false); /*Reset result display*/
+    }
   };
 
   const prevCard = () => {
-    setCurrentCardIndex((prev) => (prev - 1 + cardData.length) % cardData.length);
+    if (currentCardIndex > 0) {
+      setCurrentCardIndex((prev) => prev - 1);
+      setUserAnswer(''); /*Reset answer when moving to previous card*/
+      setShowResult(false); /*Reset result display*/
+    }
+  };
+
+  const onCheckAnswer = () => {
+    console.log("oncheck called.");
+    const currentCard = cardData[currentCardIndex];
+    const correctAnswer = currentCard.title.toLowerCase(); /*makes it less sensitive to case*/
+    const userInput = userAnswer.toLowerCase().trim();
+    
+    setIsCorrect(userInput === correctAnswer);
+    setShowResult(true);
+  };
+
+  const handleInputChange = (e) => {
+    setUserAnswer(e.target.value);
+    setShowResult(false); /*Hide result when user starts typing again*/
   };
 
   /*Study mode content with single card*/
@@ -89,7 +117,9 @@ const App = () => {
   /*It will show one card at a time, with navigation buttons to go to the next or previous card*/
   const studyModeContent = ( 
       <div className="single-card-container">
-
+        <br/>
+        <br/>
+        <br/>
         <h2>Test Your Knowledge!</h2>
         <Cards
           title={cardData[currentCardIndex].title}
@@ -98,10 +128,43 @@ const App = () => {
         isStudyMode={true}
       />
 
+      <div className="input-container">
+        <input 
+          name="myInput" 
+          value={userAnswer}
+          onChange={handleInputChange}
+          placeholder="Answer here..."
+        />
+        <button className="check-answer-btn" onClick={onCheckAnswer}>
+          Check Answer
+        </button>
+      </div>
+
+      {showResult && (
+        <div className={`result ${isCorrect ? 'correct' : 'incorrect'}`}>
+          {isCorrect ? 
+            <p>✅ Correct! Well done!</p> : 
+            <p>❌ Incorrect. The correct answer is: {cardData[currentCardIndex].title}</p>
+          }
+        </div>
+      )}
+
       <div className="navigation-buttons">
-        <button onClick={prevCard}>Previous</button>
+        <button 
+          onClick={prevCard}
+          disabled={currentCardIndex === 0}
+          className={currentCardIndex === 0 ? 'disabled' : ''}
+        >
+          Previous
+        </button>
         <span>{currentCardIndex + 1} / {cardData.length}</span> {/*Display current card index and total number of cards*/}
-        <button onClick={nextCard}>Next</button>
+        <button 
+          onClick={nextCard}
+          disabled={currentCardIndex === cardData.length - 1}
+          className={currentCardIndex === cardData.length - 1 ? 'disabled' : ''}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
@@ -244,6 +307,7 @@ const App = () => {
     <div className="App">
       <h1 className='mainHeader'>
         The Feminist Feature
+        
         <button className='header-button' onClick={handleButtonClick}>
           {isStudyMode ? 'Exit Study Mode' : 'Study Mode'}
         </button>
