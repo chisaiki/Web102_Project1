@@ -84,12 +84,18 @@ const App = () => {
     setCurrentCardIndex((prev) => (prev - 1 + cardData.length) % cardData.length);
   };
 
+  const onCheckAnswer = () => {
+    console.log("oncheck called.");
+};
+
   /*Study mode content with single card*/
   /*This is the content that will be displayed when the user clicks the button to enter study mode*/
   /*It will show one card at a time, with navigation buttons to go to the next or previous card*/
   const studyModeContent = ( 
       <div className="single-card-container">
-
+        <br/>
+        <br/>
+        <br/>
         <h2>Test Your Knowledge!</h2>
         <Cards
           title={cardData[currentCardIndex].title}
@@ -97,6 +103,14 @@ const App = () => {
         image={cardData[currentCardIndex].image}
         isStudyMode={true}
       />
+
+      <label>
+        <input name="myInput" />
+      </label>
+
+      <div type="submit" className="button submit" onClick={onCheckAnswer}>
+        <button>Check Answer</button>
+      </div>
 
       <div className="navigation-buttons">
         <button onClick={prevCard}>Previous</button>
